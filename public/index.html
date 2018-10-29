@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesheets/theoryDetail.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/connexion.css">
     <title>My theory</title>
 </head>
 
@@ -18,15 +19,6 @@
       v-on:on-change-current-page="onChangeCurrentPage"></nav-bar>  
    
    
-<<<<<<< HEAD
-    <mini-theory 
-    v-for="theory in theories" 
-    v-bind:key="theory.id" 
-    v-bind:theory="theory" 
-    >
-    </mini-theory>
-      
-=======
     <section v-if="currentPage === 'accueil'||currentPage === '' "id="accueilPage">
         <card-theory 
         v-for="theory in theories" 
@@ -45,10 +37,19 @@
           
         </section>
 
-        <section v-else-if="currentPage === 'profil'"id="ptofilPage">
+        <section v-else-if="currentPage === 'profil'"id="profilPage">
           <profil ></profil>
           </section>
->>>>>>> 3377b70e36c792688d3a59ef044e5b44e11a7229
+
+
+          <section v-else-if="currentPage === 'inscription'"id="inscriptionPage">
+           <inscription-page></inscription-page>
+          </section>
+
+
+          <section v-else-if="currentPage === 'connexion'"id="connexionPage">
+             <connexion-page></connexion-page>
+            </section>
 
   </div>
 
@@ -59,6 +60,8 @@
   <script src="Component/cardTheory.js"></script>
   <script src="Component/theoryDetail.js"></script>
   <script src="Component/profil.js"></script>
+  <script src="Component/connexion.js"></script>
+  <script src="Component/inscription.js"></script>
   <script src="app.js"></script>
   
 </body>

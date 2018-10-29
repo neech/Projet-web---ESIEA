@@ -8,18 +8,18 @@ Vue.component('nav-bar', {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-<<<<<<< HEAD
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-=======
               <a class="nav-link" v-on:click="$emit('on-change-current-page', 'accueil')" >Home <span class="sr-only">(current)</span></a>
->>>>>>> 3377b70e36c792688d3a59ef044e5b44e11a7229
             </li>
             <li class="nav-item">
               <a class="nav-link" v-on:click="$emit('on-change-current-page', 'profil')" >Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="connexion.html">Connexion</a>
+              <a class="nav-link" v-on:click="$emit('on-change-current-page', 'connexion')">Connexion</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" v-on:click="">    <i class="far fa-moon"></i></a>
+
+          </li>
           </ul>
         </div>
       </nav>
