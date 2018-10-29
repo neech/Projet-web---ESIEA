@@ -1,6 +1,6 @@
 Vue.component('profil', {
     template: `
-    Bienvenue , ...
+   <p> Bienvenue , ...</p>
 
     
         `
