@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="stylesheets/connexion.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav-bar></nav-bar>
+
+    </div>
+
+
+    <div class="carre2">
+        <form style="margin-top: 3%">
+                <p style="color: black;";>
+                    Nom : <input type="text" id="lastname" class="box"/>
+                    Prénom : <input type="text" id="name" class="box"/>
+                </p>
+                <p style="color: black";>
+                        Date de naissance : <input type="date" id="end" name="trip" min="1900-01-01" max="2018-12-31" class="box"/>
+                </p>
+                <p style="color: black";>
+                        Pseudo : <input type="text" id="pseudo" class="box"/>
+                </p>
+                <p style="color: black";>
+                        E-mail : <input type="text" id="mail" class="box"/>
+                </p>
+                <p style="color: black";>
+                        Mot de passe : <input type="password" id="password" class="box"/>
+                </p>
+                <p style="color: black";>
+                        Confirmer le mot de passe : <input type="password" id="confirm" class="box" />
+                </p>
+                <p>
+                    <input type="submit" id="submit" value="S'inscrire" style="border-style: solid; border-radius: 5px"/>
+                </p>
+        </form>
+    </div>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="Component/navbar.js"></script>
+  <script src="Component/MiniTheory.js"></script>
+  <script src="Component/connexion.js"></script>
+  <script src="app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+</body>
+
+</html>
