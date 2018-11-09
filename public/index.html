@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/connexion.css">
+    <link rel="stylesheet" href="stylesheets/profil.css">
     <title>My theory</title>
 </head>
 
@@ -16,10 +17,11 @@
   <div id="app">
 
       <nav-bar
-      v-on:on-change-current-page="onChangeCurrentPage"></nav-bar>  
+      v-on:on-change-current-page="onChangeCurrentPage"
+      v-on:enable-dark-mode="enableDarkMode"></nav-bar>  
    
    
-    <section v-if="currentPage === 'accueil'||currentPage === '' "id="accueilPage">
+    <section v-if="currentPage === 'accueil-page'||currentPage === '' "id="accueilPage">
         <card-theory 
         v-for="theory in theories" 
         v-bind:key="theory.id" 
@@ -29,25 +31,29 @@
         
       </section>
   
-      <section v-else-if="currentPage === 'theoryDetail'" id="theoryPage">
-          <theory-detail
-          v-bind:key="theoryClicked.id" 
-          v-bind:theory="theoryClicked">
-          </theory-detail>
+      <section v-else-if="currentPage === 'theory-detail-page'" id="theoryPage">
+        <theory-detail
+        v-bind:key="theoryClicked.id" 
+        v-bind:theory="theoryClicked">
+        </theory-detail>
           
         </section>
 
-        <section v-else-if="currentPage === 'profil'"id="profilPage">
-          <profil ></profil>
+        <section v-else-if="currentPage === 'profil-page'"id="profilPage">
+          <profil-page
+          v-bind:key="profil_user.id" 
+          v-bind:user_profil="profil_user"
+          v-bind:theories="theories" >
+        </profil-page>
           </section>
 
 
-          <section v-else-if="currentPage === 'inscription'"id="inscriptionPage">
+          <section v-else-if="currentPage === 'inscription-page'"id="inscriptionPage">
            <inscription-page></inscription-page>
           </section>
 
 
-          <section v-else-if="currentPage === 'connexion'"id="connexionPage">
+          <section v-else-if="currentPage === 'connexion-page'"id="connexionPage">
              <connexion-page></connexion-page>
             </section>
 
