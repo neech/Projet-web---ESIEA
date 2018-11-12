@@ -8,12 +8,14 @@ const Profil  = Vue.component('Profil', {
 <p>{{ userprofile.nbComment }} comments</p>
 <h5>Post list </h5>
 <hr>
+<section  v-for="theory in theories" >
+<router-link :to="{ name: 'Theory', params: { id: theory.id}}">
 <card-theory 
-v-for="theory in theories" 
 v-bind:key="theory.id" 
-v-bind:theory="theory"
-v-on:on-theory-clicked="onTheoryClicked">
+v-bind:theory="theory">
 </card-theory>
+</router-link>
+</section>
 </div>
         `,
     created () {
