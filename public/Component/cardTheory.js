@@ -1,4 +1,4 @@
-Vue.component('card-theory', {
+const CardTheory = Vue.component('card-theory', {
   props: ['theory'],
   template: `
     <div class="card" v-on:click="$emit('on-theory-clicked', theory)" >
@@ -11,4 +11,24 @@ Vue.component('card-theory', {
     </div>
   </div>
       `
+})
+
+
+const ListTheory = Vue.component('list_theory', {
+  props: ['theories'],
+  template: `
+  <div class="list" >
+  <card-theory 
+  v-for="theory in theories" 
+  v-bind:key="theory.id" 
+  v-bind:theory="theory"
+  v-on:on-theory-clicked="onTheoryClicked">
+  </card-theory>
+  </div>
+      `,
+      created () {
+        console.log("jnklm")
+        console.log(this)
+    }
+      
 })
