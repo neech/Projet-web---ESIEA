@@ -18,16 +18,18 @@ const ListTheory = Vue.component('list_theory', {
   props: ['theories'],
   template: `
   <div class="list" >
+  <section  v-for="theory in theories" >
+  <router-link :to="{ name: 'Theory', params: { id: theory.id}}">
   <card-theory 
-  v-for="theory in theories" 
   v-bind:key="theory.id" 
-  v-bind:theory="theory"
-  v-on:on-theory-clicked="onTheoryClicked">
-  </card-theory>
+  v-bind:theory="theory">
+    </card-theory> 
+    </router-link>
+    </section>
   </div>
       `,
       created () {
-        console.log("jnklm")
+        console.log("affichage de la liste des théories")
         console.log(this)
     }
       

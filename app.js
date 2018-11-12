@@ -1,3 +1,4 @@
+var session = require('express-session')
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'random random',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

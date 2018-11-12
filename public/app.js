@@ -1,3 +1,4 @@
+
 var theories = [
   { id: 1, nbComment: 0, titre: 'Mon initiation avec Vue', urlImage : "https://thenypost.files.wordpress.com/2017/08/aliens.jpg" , description: "description"},
   { id: 2,nbComment: 10,  titre: 'Blogger avec Vue', urlImage : "https://thenypost.files.wordpress.com/2017/08/aliens.jpg" , description: "descriptdsgfhdspwo<rjghjsoprq^zejsgfnpôdsrqjkdgcbvxfdserqzeion" },
@@ -5,8 +6,15 @@ var theories = [
 ]
 var profil_user = {id: 1, pseudo : 'Vivaldo' , mail : 'a@hotmail.fr', nbPost :12 ,nbComment : 10} 
 
+
+function searchTheory (route) {
+  return  { theory : theories.find(x => x.id == route.params.id) }
+  
+}
+
 const routes = [
   { path: '/', component: ListTheory, props: {theories :  theories }},
+  { path: '/Theory/:id',name: 'Theory', component: TheoryDetail, props: searchTheory},
   { path: '/home', component: ListTheory, props: {theories :  theories } },
   { path: '/Profil', component: Profil, props: {  userprofile : profil_user , theories : theories } },
   { path: '/login', component: Login },
