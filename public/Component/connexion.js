@@ -5,17 +5,17 @@ const Login  = Vue.component('connexion-page', {
 
         <div class="carre1">
         <form style="margin-top: 3%">
-                <p >
+                <!--<p >
                     Username :
-                </p>
+                </p>-->
                 <p>
-                    <input type="text" id="username" class="box" />
+                    <input type="text" id="username" placeholder="Username" class="box" />
                 </p>
-                <p >
+                <!--<p >
                     Password :
-                </p>
+                </p>-->
                 <p>
-                    <input type="password" id="password" class="box"/>
+                    <input type="password" id="password" placeholder="Password" class="box"/>
                 </p>    
                 <p>
                     <input type="submit" id="submit" value="Login"  style="border-style: solid; border-radius: 5px"/>

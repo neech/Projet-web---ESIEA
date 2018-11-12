@@ -4,7 +4,7 @@ const Signup = Vue.component('inscription-page', {
         <h3 style="text-align:center; margin-top: 3%"> SIGN UP </h3>
         
         <div class="carre2">
-                <form style="margin-top: 1%">
+                <form style="margin-top: 3%">
                         
                         <!-- <p style="color: black;";>
                                 Nom : <input type="text" id="lastname" class="box"/>
@@ -15,16 +15,16 @@ const Signup = Vue.component('inscription-page', {
                         </p>
                 -->
                         <p style="color: black">
-                                Pseudo : <input type="text" id="pseudo" class="box"/>
+                                <!--Pseudo : --><input type="text" id="pseudo" placeholder="Pseudo" class="box"/>
                         </p>
                         <p style="color: black">
-                                E-mail : <input type="text" id="mail" class="box"/>
+                                <!--E-mail : --><input type="text" id="mail" placeholder="E-mail" class="box"/>
                         </p>
                         <p style="color: black">
-                                Password : <input type="password" id="password" class="box"/>
+                                <!--Password : --><input type="password" id="password" placeholder="Password" class="box"/>
                         </p>
                         <p style="color: black">
-                                Confirm the password : <input type="password" id="confirm" class="box" />
+                                <!--Confirm the password : --><input type="password" id="confirm" placeholder="Confirm the password" class="box" />
                         </p>
                         <p>
                                 <input type="submit" id="submit" value="Sign up" style="border-style: solid; border-radius: 5px"/>
