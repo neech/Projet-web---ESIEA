@@ -12,10 +12,10 @@ const navbar  = Vue.component('navbar-app', {
             <router-link class="nav-link" to="/Home">Home</router-link>
               </li>
             <li class="nav-item">
-            <router-link class="nav-link" to="/Profil" >Profil</router-link>
+            <router-link class="nav-link" to="/Profil" >Profile</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/Login">Connexion</router-link>
+              <router-link class="nav-link" to="/Login">Login</router-link>
             </li>
            
           </ul>
