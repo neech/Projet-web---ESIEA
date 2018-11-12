@@ -10,17 +10,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/connexion.css">
     <link rel="stylesheet" href="stylesheets/profil.css">
+    <link rel="stylesheet" href="stylesheets/fab.css">
     <title>My theory</title>
 </head>
 
 <body>
   <div id="app">
 
-      <nav-bar
+      <navbar-app
       v-on:on-change-current-page="onChangeCurrentPage"
-      v-on:enable-dark-mode="enableDarkMode"></nav-bar>  
+      v-on:enable-dark-mode="enableDarkMode"></navbar-app>  
    
-   
+ <!--
     <section v-if="currentPage === 'accueil-page'||currentPage === '' "id="accueilPage">
         <card-theory 
         v-for="theory in theories" 
@@ -56,18 +57,32 @@
           <section v-else-if="currentPage === 'connexion-page'"id="connexionPage">
              <connexion-page></connexion-page>
             </section>
+-->
 
+<!--
+<Profil
+v-bind:key="profil_user.id" 
+v-bind:userprofile="profil_user"
+v-bind:theories="theories" >
+</Profil>
+-->
+            <router-view></router-view>
+            
+            <div class="fab"> <router-link class="nav-link" to="/Create"><i class="fas fa-plus"></i></router-link></div>
+          
   </div>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="Component/navbar.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.1"></script>
+  <script src="Component/navbar.js" ></script>
   <script src="Component/cardTheory.js"></script>
   <script src="Component/theoryDetail.js"></script>
   <script src="Component/profil.js"></script>
   <script src="Component/connexion.js"></script>
   <script src="Component/inscription.js"></script>
+  <script src="Component/createTheory.js"></script>
   <script src="app.js"></script>
   
 </body>

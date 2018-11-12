@@ -1,4 +1,4 @@
-Vue.component('theory-detail', {
+const TheoryDetail = Vue.component('theory-detail', {
     props: ['theory'],
     template: `
     <div class="theoryDetail">

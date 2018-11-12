@@ -1,4 +1,4 @@
-Vue.component('inscription-page', {
+const Signup = Vue.component('inscription-page', {
     template: `
     <div class="carre2">
     <form style="margin-top: 3%">

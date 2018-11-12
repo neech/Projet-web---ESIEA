@@ -1,4 +1,4 @@
-Vue.component('create-theory', {
+const Create  = Vue.component('create-theory', {
     props: ['theory'],
     template: `
     <div class="carre1">
