@@ -1,4 +1,4 @@
-const Login  = Vue.component('theory-horizontal', {
+const theoryHorizontal  = Vue.component('theory-horizontal', {
     template: `
     
       `

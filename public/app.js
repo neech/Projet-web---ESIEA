@@ -39,7 +39,6 @@ const router = new VueRouter({
          'color' : 'black' 
       },
       isDarkModeEnable : false,
-        currentPage: '',
         theoryClicked : null,
         theories: [
           { id: 1, nbComment: 0, titre: 'Mon initiation avec Vue', urlImage : "https://thenypost.files.wordpress.com/2017/08/aliens.jpg" , description: "description"},
@@ -49,10 +48,6 @@ const router = new VueRouter({
         profil_user : {id: 1, pseudo : 'Vivaldo' , mail : 'a@hotmail.fr', nbPost :12 ,nbComment : 10} ,
       },
       methods: {
-        onChangeCurrentPage: function (newCurrentPage) {
-          this.currentPage = newCurrentPage
-       
-        },
 
         onTheoryClicked: function (theoryClicked) {
             console.log("here")
