@@ -32,6 +32,12 @@ const router = new VueRouter({
     router,
     el: '#app',
     data: {
+      styleApp : {
+        'background-color': 'white',
+         'width' : '100%',
+         'min-height': '100%',
+         'color' : 'black' 
+      },
       isDarkModeEnable : false,
         currentPage: '',
         theoryClicked : null,
@@ -58,19 +64,27 @@ const router = new VueRouter({
           },
           
           enableDarkMode: function (change) {
-            if(change)
-            this.isDarkModeEnable = !this.isDarkModeEnable
-            document.body.style.backgroundColor = this.isDarkModeEnable? "black" : "white"
-            document.body.style.color = this.isDarkModeEnable? "white" : "black"
-            elements = document.getElementsByClassName("container");
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.backgroundColor= this.isDarkModeEnable? "black" : "white"
+           
+            if(change){
+              this.isDarkModeEnable = !this.isDarkModeEnable
+            localStorage.isDarkModeEnable = this.isDarkModeEnable;
             }
-          
+
+
+            this.styleApp['background-color'] = this.isDarkModeEnable  ? "black" : "white"
+            this.styleApp['color'] = !this.isDarkModeEnable ? "black" : "white"
           }
 
-
+      },
+      mounted() {
+      
+        if (localStorage.isDarkModeEnable) {
+          this.isDarkModeEnable =  localStorage.isDarkModeEnable  === "true"; //Conversion en booléen sinon ça ne fonctionne pas ...
+        }
+   
+        this.enableDarkMode(false)
       }
-  }).$mount('#app')
+      
+  })
   
   console.log(app)
