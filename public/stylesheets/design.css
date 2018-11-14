@@ -75,3 +75,8 @@
     border-color: goldenrod; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
+.design:hover {
+    width: 240px;
+    height: 165px;
+}
