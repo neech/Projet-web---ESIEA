@@ -1,7 +1,7 @@
 const Profil  = Vue.component('Profil', {
     props: ['userprofile','theories'],
     template: `
-    <div class="profil" style="min-width: 700px">
+    <div class="profile">
         <h2> Welcome , {{ userprofile.pseudo }} </h2>
         
         <p>{{ userprofile.mail }} mail</p>
@@ -10,7 +10,7 @@ const Profil  = Vue.component('Profil', {
         <h4>Post list </h4>
         <hr style="border-radius: 2px; border-color: black">
 
-        <div style="margin-bottom: 1%">
+        <div class="headers">
             <span><h5 style="float: left">Post title</h5></span>
             <span><h5 style="float: right">Comments</h5></span>
             <span><h5 style="text-align: center">Date</h5></span>
