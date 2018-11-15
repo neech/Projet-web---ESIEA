@@ -1,0 +1,29 @@
+#carre2 {
+    padding : 1%;
+    width:auto;
+    height:auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align:center;
+    margin-top: 6%;
+    margin-left: 20%;
+    margin-right:20%;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#box {
+    border-style: solid;
+    border-width: 3px; 
+    border-radius: 5px; 
+    border-color: goldenrod; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#header {
+    text-align:center;
+    margin-top: 3%;
+}
+
+#form {
+    margin-top: 3%;
+}

@@ -1,21 +1,18 @@
 const Login  = Vue.component('connexion-page', {
     template: `
-    <div class="connexion">
-        <h3 style="text-align:center; margin-top: 3%"> LOGIN </h3>
+    <div class="connection">
+        <h3 id="header"> LOGIN </h3>
 
-        <div class="carre1">
-        <form style="margin-top: 3%">
-                <!--<p >
+        <div id="carre1">
+            <form id="form">
+                <p>
                     Username :
-                </p>-->
-                <p>
-                    <input type="text" id="username" placeholder="Username" class="box" />
                 </p>
-                <!--<p >
-                    Password :
-                </p>-->
                 <p>
-                    <input type="password" id="password" placeholder="Password" class="box"/>
+                    <input type="text" id="username" placeholder="Username" id="box" />
+                </p>
+                <p>
+                    <input type="password" id="password" placeholder="Password" id="box"/>
                 </p>    
                 <p>
                     <input type="submit" id="submit" value="Login"  style="border-style: solid; border-radius: 5px"/>

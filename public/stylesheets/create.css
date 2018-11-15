@@ -1,31 +1,4 @@
-.carre1 {
-    padding : 1%;
-    width:auto;
-    height:auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    text-align:center;
-    margin-top: 6%;
-    margin-left: 20%;
-    margin-right:20%;
-    border-radius: 5px;
-    transition: 0.3s;
-   }
-
-
-.carre2 {
-    padding : 1%;
-    width:auto;
-    height:auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    text-align:center;
-    margin-top: 6%;
-    margin-left: 20%;
-    margin-right:20%;
-    border-radius: 5px;
-    transition: 0.3s;
-   }
-
-.carre3 {
+#carre3 {
     padding-top:1%;
     padding-left : 8%;
     padding-right:8%;
@@ -33,17 +6,14 @@
     height:100%;
     text-align: left;
     margin:0px;
-   }
-
-.box {
-    border-style: solid;
-    border-width: 3px; 
-    border-radius: 5px; 
-    border-color: goldenrod; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.boxTitle {
+#header {
+    text-align:center;
+    margin-top: 2%;
+}
+
+.areaTitle {
     width: 90%;
     height:5.5%;
     margin-left: 5%;
@@ -54,7 +24,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.boxDesc {
+.areaDesc {
     width: 90%;
     height: 30%;
     margin-left: 5%;
@@ -65,7 +35,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.boxPicture {
+.areaPicture {
     height:5.5%;
     margin-left: 5%;
     margin-right: 1%;
@@ -74,4 +44,12 @@
     border-radius: 5px; 
     border-color: goldenrod; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#form {
+    margin-top: 3%;
+}
+
+#textarea {
+    padding-bottom: 2%;
 }

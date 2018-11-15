@@ -1,0 +1,48 @@
+.profile{
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.headers {
+    margin-bottom: 1%;
+}
+
+.post {
+    height: 60px;
+    margin-bottom: 1%;
+}
+
+#divimg {
+    width: 33%;
+    float: left;
+}
+
+#img {
+    width: 80px;
+    height: 55px;
+    margin: 0.5%;
+    margin-left: 0px;
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-color: grey;
+    border-radius: 4px;
+}
+
+/*.design:hover {
+    width: 240px;
+    height: 165px;
+}*/
+
+#date {
+    width: 33.6%;
+    float: left;
+    text-align: center;
+}
+
+#comments {
+    width: 33.3%;
+    float: left;
+    text-align: right;
+}
