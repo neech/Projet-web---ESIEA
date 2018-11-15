@@ -55,7 +55,6 @@ const router = new VueRouter({
             this.onChangeCurrentPage('theory-detail-page')
             console.log(this.currentPage)
 
-
           },
           
           enableDarkMode: function (change) {
