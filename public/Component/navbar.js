@@ -11,12 +11,15 @@ const navbar  = Vue.component('navbar-app', {
             <li class="nav-item">
             <router-link class="nav-link" to="/Home">Home</router-link>
               </li>
-            <li class="nav-item">
-            <router-link class="nav-link" to="/Profil" >Profile</router-link>
+            <li class="nav-item" v-if="isUserConnected">
+            <router-link class="nav-link"  to="/Profil" >Profile</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"  v-if="!isUserConnected">
               <router-link class="nav-link" to="/Login">Login</router-link>
             </li>
+            <li class="nav-item" v-if="isUserConnected">
+            <router-link class="nav-link"  >logout</router-link>
+          </li>
            
           </ul>
           
@@ -33,5 +36,10 @@ const navbar  = Vue.component('navbar-app', {
     </div>
         </div>
       </nav>
-      `
+      `,
+      computed: {
+        isUserConnected () {
+            return store.getters.isUserConnected;
+        }
+    }
   })

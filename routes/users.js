@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const authentificator = require('../controller/authentification');
+
+/* POST create User */
+router.post('/', authentificator.signup);
+
+/* POST login User */
+router.post('/login', authentificator.login);
 
 module.exports = router;
