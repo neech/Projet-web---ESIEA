@@ -8,9 +8,19 @@ const CardTheory = Vue.component('card-theory', {
       <p>{{ theory.description }}</p> 
       <hr>
       <p>{{ theory.nbComment }} <i class="far fa-comment"></i> </p> 
+
+      <ul v-if="getUserId == theory.id_user"  v-on:click="counter += 1"> <i class="far fa-trash-alt"></i></ul> 
+      <ul v-if="getUserId == theory.id_user" > <i class="far fa-edit"></i></ul> 
+
     </div>
   </div>
-      `
+      `,
+      computed: {
+        getUserId () {
+          console.log(store.getters.getUserId)
+            return store.getters.getUserId
+        }
+    }
 })
 
 
@@ -30,7 +40,7 @@ const ListTheory = Vue.component('list_theory', {
       `,
       created () {
         console.log("affichage de la liste des théories")
-        console.log(this)
+        store.dispatch('getAllTheories')
     }
       
 })

@@ -27,7 +27,7 @@ const Profil  = Vue.component('Profil', {
     </div>
         `,
     created () {
-        console.log("jnklm")
+        console.log(this)
         //console.log(JSON.parse(JSON.stringify(this)))
     }
   })

@@ -7,9 +7,9 @@ const theoryHorizontal  = Vue.component('theory-horizontal', {
             <p>{{ theory.titre }}</p>
         </div>
 
-        <div id="date">09/11/2018</div>
+        <div id="date">{{ theory.date }}</div>
 
-        <div id="comments">12</div>
+        <div id="comments">{{ theory.nbComment }}</div>
 
     </div>
       `
