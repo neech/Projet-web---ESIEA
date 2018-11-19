@@ -14,21 +14,26 @@ const Login = Vue.component('connexion-page', {
                 }).then(response => {
                     console.log(response.data)
                     var userCo = response.data
-                    if (userCo === '')
+
+                    if (userCo === null) {
                         alert("This user exist or the password is wrong")
-                    else
+                        return
+                    }
+
+                    else {
                         store.commit('setUser', userCo)
+                        router.push('/home')
+                    }
 
                     console.log(store.state.profil_user)
-                    router.push('/home')
                 }).catch(error => {
                     console.log(error.response)
                 });
             }
-          else
-          alert('Verify each fields');
+            else
+                alert('Verify each fields');
         }
-      },
+    },
     template: `
     <div class="connection" >
         <h3 id="header"> LOGIN </h3>
@@ -55,4 +60,4 @@ const Login = Vue.component('connexion-page', {
         </div>
     </div>
       `
-  })
+})

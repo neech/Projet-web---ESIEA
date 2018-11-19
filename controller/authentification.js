@@ -17,8 +17,16 @@ exports.login = function (req, res) {
     console.log("login")
     console.log(req.body.user)
     var user = req.body.user
-    var userCo = Object.assign({}, users.find(u => u.pseudo == user.pseudo && u.password == user.password))
-    userCo.password = ""
+    var userCo = users.find(u => u.pseudo == user.pseudo && u.password == user.password)
+    
+    if(userCo !== undefined){
+        userCo = Object.assign({},userCo)
+        userCo.password = ""
+    }
+        
+    else
+    userCo = null
+    
     res.setHeader('Content-Type', 'application/json');
     res.json(userCo)
 
