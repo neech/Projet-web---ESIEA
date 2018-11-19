@@ -23,17 +23,12 @@ exports.addTheory = function (req, res) {
   theory.date = Date.now()
   theories.push(theory)
   console.log("addTheory")
+
+
+  saveTheories()
   res.json(theories) //remplacer par un next
 
-  //sauvegarder
-  var data = JSON.stringify(theories)
-  fs.writeFile(filename, data, function (err) {
-    if (err) {
-      return console.log(err);
-    }
 
-    console.log("The file was saved!");
-  });
 }
 
 
@@ -45,26 +40,44 @@ exports.updateTheory = function (req, res) {
 
   var oldTheory = theories.find(t => t.id === theory.id)
 
-  var index = array.indexOf(oldTheory)
+  var index = theories.indexOf(oldTheory)
   if (index > -1) {
     theories.splice(index, 1, theory);
   }
 
+  saveTheories()
+
   console.log("updateTheory")
+  res.send(true)
 }
 
 
 
 exports.deleteTheory = function (req, res) {
-  //supprime la theories et renvoie la liste
+
+  //supprime la theorie
   var theory = req.body.theory
+  var user = req.body.user
 
-  var index = array.indexOf(theory)
-  if (index > -1) {
-    theories.splice(index, 1)
+  if (theory.id_user == user.id || user.isAdmin) {
+
+    var theoryInBd = theories.find(t => t.id === theory.id);
+
+    var index = theories.indexOf(theoryInBd)
+
+
+    console.log(index);
+    if (index > -1) {
+      theories.splice(index, 1)
+    }
+
+    saveTheories()
+
+    res.send(true)
+
   }
-
-  console.log("deleteTheory")
+  else
+    res.send(false)
 }
 
 exports.getAllTheory = function (req, res) {
@@ -74,3 +87,15 @@ exports.getAllTheory = function (req, res) {
 }
 
 
+saveTheories = function () {
+  //sauvegarder
+  var data = JSON.stringify(theories)
+
+  fs.writeFile(filename, data, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+
+    console.log("The file was saved!");
+  });
+}

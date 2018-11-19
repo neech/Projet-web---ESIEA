@@ -9,6 +9,7 @@ const Signup = Vue.component('inscription-page', {
                 checkForm: function (e) {
                  
                   if (this.new_user.pseudo && this.new_user.password && this.verif_password && this.verif_password == this.new_user.password) {
+                        this.user_log.password = CryptoJS.SHA512(this.user_log.password).toString()
                         axios.post(`user`, {
                                 user: this.new_user
                               }).then(response => {

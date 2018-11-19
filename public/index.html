@@ -21,52 +21,7 @@
 
       <navbar-app
       v-on:enable-dark-mode="enableDarkMode"></navbar-app>  
-   
- <!--
-    <section v-if="currentPage === 'accueil-page'||currentPage === '' "id="accueilPage">
-        <card-theory 
-        v-for="theory in theories" 
-        v-bind:key="theory.id" 
-        v-bind:theory="theory"
-        v-on:on-theory-clicked="onTheoryClicked">
-        </card-theory>
-        
-      </section>
-  
-      <section v-else-if="currentPage === 'theory-detail-page'" id="theoryPage">
-        <theory-detail
-        v-bind:key="theoryClicked.id" 
-        v-bind:theory="theoryClicked">
-        </theory-detail>
-          
-        </section>
 
-        <section v-else-if="currentPage === 'profil-page'"id="profilPage">
-          <profil-page
-          v-bind:key="profil_user.id" 
-          v-bind:user_profil="profil_user"
-          v-bind:theories="theories" >
-        </profil-page>
-          </section>
-
-
-          <section v-else-if="currentPage === 'inscription-page'"id="inscriptionPage">
-           <inscription-page></inscription-page>
-          </section>
-
-
-          <section v-else-if="currentPage === 'connexion-page'"id="connexionPage">
-             <connexion-page></connexion-page>
-            </section>
--->
-
-<!--
-<Profil
-v-bind:key="profil_user.id" 
-v-bind:userprofile="profil_user"
-v-bind:theories="theories" >
-</Profil>
--->
             <router-view></router-view>
             
             <div class="fab"> <router-link class="nav-link" to="/Create"><i class="fas fa-plus"></i></router-link></div>
