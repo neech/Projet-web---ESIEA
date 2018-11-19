@@ -3,21 +3,18 @@ const TheoryDetail = Vue.component('theory-detail', {
     template: `
     <div class="theoryDetail">
         <h1><b>{{ theory.titre }}</b></h1> 
-        <img :src="theory.urlImage" alt="Avatar" >
+        <img :src="theory.urlImage" alt="Avatar" > 
 
-        <div style="width: 15%">
-        <span style="float: left" >
-        </span>
+        <div style="float: right; width: 8%; margin-top: 1%; margin-bottom: 3%">
+            <span style="float: right" >
+                <ul v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></ul> 
+            </span>
+            <span style="float: left">
+                <ul v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i></ul> 
+            </span>
+        </div>
 
-        <span style="float: right" >
-          <ul v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></ul> 
-        </span>
-        <span style="text-align: center">
-          <ul v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i></ul> 
-        </span>
-      </div>
-
-        <p>{{ theory.description }}</p> 
+        <p style="float: left">{{ theory.description }}</p>
         
         <div class="fixedinput">
             <input type="text" id="comment" placeholder="Write a comment here" class="comment_input"/>  
