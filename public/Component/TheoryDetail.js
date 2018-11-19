@@ -5,16 +5,14 @@ const TheoryDetail = Vue.component('theory-detail', {
         <h1><b>{{ theory.titre }}</b></h1> 
         <img :src="theory.urlImage" alt="Avatar" > 
 
-        <div style="float: right; width: 8%; margin-top: 1%; margin-bottom: 3%">
-            <span style="float: right" >
-                <ul v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></ul> 
-            </span>
-            <span style="float: left">
-                <ul v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i></ul> 
-            </span>
+        <div style="float: left; width: 60px; margin-bottom: 2%; margin-top:5px; position: absolute">
+            <span class="iconeEdit" v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></span> 
+            <span class="iconeDelete" v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i><span> 
         </div>
 
-        <p style="float: left">{{ theory.description }}</p>
+        <div style="float: left; position: absolute; margin-top: 3%">
+            {{ theory.description }}
+        </div>
         
         <div class="fixedinput">
             <input type="text" id="comment" placeholder="Write a comment here" class="comment_input"/>  
