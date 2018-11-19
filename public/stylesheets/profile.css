@@ -9,18 +9,19 @@
 }
 
 .post {
-    height: 60px;
+    height: 8%;
     margin-bottom: 1%;
 }
 
 #divimg {
     width: 33%;
     float: left;
+    height: 7%;
 }
 
 #img {
-    width: 80px;
-    height: 55px;
+    width: 61px;
+    height: 43px;
     margin: 0.5%;
     margin-left: 0px;
     float: left;
@@ -29,11 +30,6 @@
     border-color: grey;
     border-radius: 4px;
 }
-
-/*.design:hover {
-    width: 240px;
-    height: 165px;
-}*/
 
 #date {
     width: 33.6%;

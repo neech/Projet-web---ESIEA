@@ -45,8 +45,6 @@ exports.signup = function (req, res) {
         if (err) {
             return console.log(err);
         }
-
-        console.log("The file was saved!");
     });
     /*
     if()// vérifier dans la bdd si le pseudo n'est pas pris

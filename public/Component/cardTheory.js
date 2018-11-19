@@ -7,10 +7,18 @@ const CardTheory = Vue.component('card-theory', {
       <h4><b>{{ theory.titre }}</b></h4> 
       <p>{{ theory.description }}</p> 
       <hr>
-      <p>{{ theory.nbComment }} <i class="far fa-comment"></i> </p> 
-
-      <ul v-if="getUserId == theory.id_user"   @click.native="e.preventDefault()"> <i class="far fa-trash-alt"></i></ul> 
-      <ul v-if="getUserId == theory.id_user" > <i class="far fa-edit"></i></ul> 
+      
+      <div style="width: 15%">
+        <span style="float: left">
+          <p>{{ theory.nbComment }} <i class="far fa-comment"></i> </p>
+        </span>
+        <span style="float: right">
+          <ul v-if="getUserId == theory.id_user" > <i class="far fa-edit"></i></ul> 
+        </span>
+        <span style="text-align: center">
+          <ul v-if="getUserId == theory.id_user"  v-on:click="counter += 1"> <i class="far fa-trash-alt"></i></ul> 
+        </span>
+      </div>
 
     </div>
   </div>
