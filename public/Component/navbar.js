@@ -22,9 +22,7 @@ const navbar = Vue.component('navbar-app', {
             <li class="nav-item"  v-if="!isUserConnected">
               <router-link class="nav-link" to="/Login">Login</router-link>
             </li>
-            <li class="nav-item" v-if="isUserConnected">
-            <router-link class="nav-link"  >logout</router-link>
-          </li>
+            <li class="nav-item" class="nav-link" v-if="isUserConnected" v-on:click="Logout" style="cursor: pointer;" >Logout</li>
            
           </ul>
           
@@ -50,7 +48,11 @@ const navbar = Vue.component('navbar-app', {
   methods: {
     search: function (e) {
       store.dispatch('searchTheoriesAction', this.filtre)
+    },
+    Logout: function (e) {
+      store.dispatch('logout')
     }
+    
   }
 
 })

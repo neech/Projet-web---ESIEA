@@ -6,8 +6,8 @@ const TheoryDetail = Vue.component('theory-detail', {
         <img :src="theory.urlImage" alt="Avatar" > 
 
         <div style="float: left; width: 60px; margin-bottom: 2%; margin-top:5px; position: absolute">
-            <span class="iconeEdit" v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></span> 
-            <span class="iconeDelete" v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i><span> 
+            <span style="cursor: pointer;" class="iconeEdit" v-if="getUserId == theory.id_user" v-on:click="edit_theory" > <i class="far fa-edit"></i></span> 
+            <span style="cursor: pointer;" class="iconeEdit" class="iconeDelete" v-if="getUserId == theory.id_user || isAdmin"  v-on:click="delete_theory"> <i class="far fa-trash-alt"></i><span> 
         </div>
 
         <div style="float: left; position: absolute; margin-top: 3%">

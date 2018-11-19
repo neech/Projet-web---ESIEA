@@ -41,6 +41,11 @@ const store = new Vuex.Store({
   ,
 
   actions: {
+    logout(context) {
+      axios.get(`user/logout`)
+       context.commit('setUser', {id: -1, pseudo: '', password: '', isAdmin: false })
+    }
+    ,
     getAllTheories(context) {
       axios.get(`theory`).then(response => {
         var theories = response.data
@@ -143,13 +148,13 @@ var app = new Vue({
 
     axios.get(`user/me`).then(response => {
       console.log(response.data)
-       if( response.data!= null && response.data != undefined)
-store.commit( 'setUser', response.data)
+      if (response.data != null && response.data != undefined)
+        store.commit('setUser', response.data)
 
-console.log(store.state.profil_user)
+      console.log(store.state.profil_user)
 
     })
-   
+
 
 
   }

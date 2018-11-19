@@ -63,3 +63,10 @@ exports.signup = function (req, res) {
 exports.getSessionUser = function (req, res) {
     res.json(req.session.user)
 }
+
+exports.logout = function (req, res) {
+    req.session.destroy(function(err) {
+        // cannot access session here
+      })
+}
+
