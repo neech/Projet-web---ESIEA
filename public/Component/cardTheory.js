@@ -9,7 +9,7 @@ const CardTheory = Vue.component('card-theory', {
       <hr>
       <p>{{ theory.nbComment }} <i class="far fa-comment"></i> </p> 
 
-      <ul v-if="getUserId == theory.id_user"  v-on:click="counter += 1"> <i class="far fa-trash-alt"></i></ul> 
+      <ul v-if="getUserId == theory.id_user"   @click.native="e.preventDefault()"> <i class="far fa-trash-alt"></i></ul> 
       <ul v-if="getUserId == theory.id_user" > <i class="far fa-edit"></i></ul> 
 
     </div>
