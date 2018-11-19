@@ -8,6 +8,12 @@ const navbar = Vue.component('navbar-app', {
   template: `
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <router-link class="navbar-brand" to="/Home">My Theory</router-link>
+
+
+    <ul class="navbar-nav ">
+    <a class="nav-item nav-link " v-on:click="$emit('enable-dark-mode',true)">    <i class="far fa-moon"></i></a>
+    </ul>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,19 +31,19 @@ const navbar = Vue.component('navbar-app', {
             <li class="nav-item" class="nav-link" v-if="isUserConnected" v-on:click="Logout" style="cursor: pointer;" >Logout</li>
            
           </ul>
-          
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+
+        </div> 
+
+       
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-        <a class="nav-link" v-on:click="$emit('enable-dark-mode',true)">    <i class="far fa-moon"></i></a>
-      </li>
+      
         <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model.trim="filtre"  aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0"  v-on:click="search" >Search</button>
         </form>
+        
         </ul>
-    </div>
-        </div>
+  
       </nav>
       `,
   computed: {
