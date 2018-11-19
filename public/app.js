@@ -33,7 +33,13 @@ const store = new Vuex.Store({
     },
     searchTheories(state, filtre) {
       console.log(filtre)
-      state.theories_searched = state.theories.filter(theory => theory.titre.includes(filtre))
+       
+
+      state.theories_searched.splice(0, state.theories.length)
+
+      state.theories.filter(theory => theory.titre.toLowerCase().includes(filtre.toLowerCase())).forEach(t => {
+        state.theories_searched.push(t);
+      })
       console.log(state.theories_searched)
 
     }
@@ -56,7 +62,7 @@ const store = new Vuex.Store({
     searchTheoriesAction(context, filtre) {
 
       context.commit('searchTheories', filtre)
-      console.log(context.state.theories_searched)
+    
 
       router.push({
         name: 'home',

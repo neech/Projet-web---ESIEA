@@ -1,6 +1,6 @@
 var express = require('express');
 const fs = require('fs');
-const filename = "theories"
+const filename = "theoriess"
 
 
 var theories = [
