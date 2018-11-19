@@ -51,8 +51,6 @@ exports.updateTheory = function (req, res) {
   res.send(true)
 }
 
-
-
 exports.deleteTheory = function (req, res) {
 
   //supprime la theorie
@@ -78,6 +76,16 @@ exports.deleteTheory = function (req, res) {
   }
   else
     res.send(false)
+}
+
+exports.getAllUserTheory = function (req, res) {
+
+  var idUser = req.query.ID_USER
+  
+  var theoriesUser = theories.filter(theory => theory.id_user == idUser)
+
+  res.send(theoriesUser)
+
 }
 
 exports.getAllTheory = function (req, res) {

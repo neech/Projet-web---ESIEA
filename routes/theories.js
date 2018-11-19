@@ -9,6 +9,9 @@ router.post('/', authentificator.addTheory);
 /* GET all theories */
 router.get('/', authentificator.getAllTheory);
 
+/* GET all theories */
+router.get('/user', authentificator.getAllUserTheory);
+
 /* UPDATE theory */
 router.put('/', authentificator.updateTheory);
 
