@@ -3,6 +3,9 @@ var router = express.Router();
 
 const authentificator = require('../controller/authentification');
 
+/*GET cookie user*/
+router.get('/me', authentificator.getSessionUser);
+
 /* POST create User */
 router.post('/', authentificator.signup);
 

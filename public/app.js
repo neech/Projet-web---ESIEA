@@ -45,6 +45,7 @@ const store = new Vuex.Store({
       axios.get(`theory`).then(response => {
         var theories = response.data
         context.commit('setTheories', theories)
+
       })
     },
     searchTheoriesAction(context, filtre) {
@@ -140,6 +141,15 @@ var app = new Vue({
 
     store.dispatch('getAllTheories')
 
+    axios.get(`user/me`).then(response => {
+      console.log(response.data)
+       if( response.data!= null && response.data != undefined)
+store.commit( 'setUser', response.data)
+
+console.log(store.state.profil_user)
+
+    })
+   
 
 
   }

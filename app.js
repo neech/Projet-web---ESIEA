@@ -13,12 +13,7 @@ var theoriesRouter = require('./routes/theories');
 var app = express();
 
 app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'random random',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -28,6 +23,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(session({
+  secret: 'random',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
+
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);

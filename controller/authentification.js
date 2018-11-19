@@ -30,7 +30,7 @@ exports.login = function (req, res) {
     res.setHeader('Content-Type', 'application/json');
 
     req.session.user = userCo
-
+    req.session.save()
     res.json(userCo)
 
 }
@@ -57,15 +57,9 @@ exports.signup = function (req, res) {
             return console.log(err);
         }
     });
-    /*
-    if()// vérifier dans la bdd si le pseudo n'est pas pris
-    {
-        // enregister le couple pseudo password dans la bdd
-           return true // création du compte effectif
-         
-    }
-     
-        else
-        return false // création du compte non effectif
-    }*/
+   
+}
+
+exports.getSessionUser = function (req, res) {
+    res.json(req.session.user)
 }
