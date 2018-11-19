@@ -1,3 +1,5 @@
+
+
 const Login = Vue.component('connexion-page', {
     data: function () {
         return {
@@ -6,7 +8,6 @@ const Login = Vue.component('connexion-page', {
     },
     methods: {
         login: function (e) {
-
             console.log(store.state.profil_user)
             if (this.user_log.pseudo && this.user_log.password) {
                 axios.post(`user/login`, {
