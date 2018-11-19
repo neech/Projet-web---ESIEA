@@ -2,6 +2,7 @@
 const store = new Vuex.Store({
   state: {
     theories: [],
+    theories_searched: [],
     profil_user: { id: -1, pseudo: '', password: '', isAdmin: false }
   },
   getters: {
@@ -29,6 +30,12 @@ const store = new Vuex.Store({
         state.theories.push(t);
       })
 
+    },
+    searchTheories(state, filtre) {
+      console.log( filtre )
+     state.theories_searched = state.theories.filter(theory => theory.titre.includes(filtre))
+console.log( state.theories_searched )
+    
     }
   }
   ,
@@ -39,6 +46,20 @@ const store = new Vuex.Store({
         var theories = response.data
         context.commit('setTheories', theories)
       })
+    },
+    searchTheoriesAction(context, filtre) {
+    
+      context.commit('searchTheories',filtre )
+ console.log( context.state.theories_searched    )
+
+      router.push({
+        name: 'home',
+        params: {
+            theories: context.state.theories_searched        
+        }
+
+       
+    })
     }
   }
 })
@@ -52,6 +73,7 @@ function searchTheory(route) {
 var routes = [
   { path: '/', component: ListTheory, props: { theories: store.state.theories } },
   { path: '/Theory/:id', name: 'Theory', component: TheoryDetail, props: searchTheory },
+  {path: '/Search', name : 'home',component: ListTheory, props: true},
   { path: '/home', component: ListTheory, props: { theories: store.state.theories } },
   { path: '/Profil', component: Profil, props: { userprofile: store.state.profil_user, theories: store.state.theories } },
   { path: '/login', component: Login },
@@ -117,6 +139,8 @@ var app = new Vue({
     this.enableDarkMode(false)
 
     store.dispatch('getAllTheories')
+
+    
 
   }
 

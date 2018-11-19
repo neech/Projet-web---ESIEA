@@ -1,6 +1,11 @@
 
-const navbar  = Vue.component('navbar-app', {
-    template: `
+const navbar = Vue.component('navbar-app', {
+    data: function () {
+        return {
+            filtre : ''
+        }
+    },
+  template: `
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <router-link class="navbar-brand" to="/Home">My Theory</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,17 +34,24 @@ const navbar  = Vue.component('navbar-app', {
         <a class="nav-link" v-on:click="$emit('enable-dark-mode',true)">    <i class="far fa-moon"></i></a>
       </li>
         <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model.trim="filtre"  aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0"  v-on:click="search" >Search</button>
         </form>
         </ul>
     </div>
         </div>
       </nav>
       `,
-      computed: {
-        isUserConnected () {
-            return store.getters.isUserConnected;
-        }
+  computed: {
+    isUserConnected() {
+      return store.getters.isUserConnected;
     }
-  })
+  },
+  methods: {
+    search: function (e) {
+      console.log( this.filtre )
+      store.dispatch('searchTheoriesAction', this.filtre)
+    }
+  }
+
+})

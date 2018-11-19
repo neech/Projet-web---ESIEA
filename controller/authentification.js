@@ -28,6 +28,9 @@ exports.login = function (req, res) {
     userCo = null
     
     res.setHeader('Content-Type', 'application/json');
+
+    req.session.user = userCo
+
     res.json(userCo)
 
 }
