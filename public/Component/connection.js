@@ -10,6 +10,8 @@ const Login = Vue.component('connexion-page', {
         login: function (e) {
             console.log(store.state.profil_user)
             if (this.user_log.pseudo && this.user_log.password) {
+                this.user_log.password = CryptoJS.SHA512(this.user_log.password).toString()
+                console.log(this.user_log.password)
                 axios.post(`user/login`, {
                     user: this.user_log
                 }).then(response => {

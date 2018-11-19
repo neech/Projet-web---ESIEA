@@ -1,8 +1,8 @@
 var express = require('express');
 const fs = require('fs');
-const filename = "user"
+const filename = "users"
 
-var users = [{ id: 0, pseudo: "admin", password: "admin", isAdmin: true }]
+var users = [{ id: 0, pseudo: "admin", password: "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", isAdmin: true }]
 
 
 fs.readFile(filename, function (err, data) {

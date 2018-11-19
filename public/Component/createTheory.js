@@ -1,22 +1,22 @@
-const Create  = Vue.component('create-theory', {
+const Create = Vue.component('create-theory', {
     props: ['theory'],
     data: function () {
         return {
-         newtheory: { id:-1,nbComment: 0, id_user  : -100, titre: "", description : "",urlImage : "" , date : null}
+            newtheory: { id: -1, nbComment: 0, id_user: -100, titre: "", description: "", urlImage: "", date: null }
         }
-      },
-      methods:{
+    },
+    methods: {
         create: function (e) {
-if(!store.getters.isUserConnected )
-alert('You have to be login to send a theory');
-         else if (this.newtheory.titre && this.newtheory.description && this.newtheory.urlImage ) {
-            this.newtheory.id_user = store.state.profil_user.id
-            axios.post(`theory`, { theory : this.newtheory}).then(response => router.push('/home'))
-          }
-          else
-          alert('Verify each fields');
+            if (!store.getters.isUserConnected)
+                alert('You have to be login to send a theory');
+            else if (this.newtheory.titre && this.newtheory.description && this.newtheory.urlImage) {
+                this.newtheory.id_user = store.state.profil_user.id
+                axios.post(`theory`, { theory: this.newtheory }).then(response => router.push('/home'))
+            }
+            else
+                alert('Verify each fields');
         }
-      },
+    },
     template: `
     <div id="carre3">
         <h3 id="header"> CREATE </h3>
