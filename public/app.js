@@ -32,10 +32,10 @@ const store = new Vuex.Store({
 
     },
     searchTheories(state, filtre) {
-      console.log( filtre )
-     state.theories_searched = state.theories.filter(theory => theory.titre.includes(filtre))
-console.log( state.theories_searched )
-    
+      console.log(filtre)
+      state.theories_searched = state.theories.filter(theory => theory.titre.includes(filtre))
+      console.log(state.theories_searched)
+
     }
   }
   ,
@@ -48,18 +48,18 @@ console.log( state.theories_searched )
       })
     },
     searchTheoriesAction(context, filtre) {
-    
-      context.commit('searchTheories',filtre )
- console.log( context.state.theories_searched    )
+
+      context.commit('searchTheories', filtre)
+      console.log(context.state.theories_searched)
 
       router.push({
         name: 'home',
         params: {
-            theories: context.state.theories_searched        
+          theories: context.state.theories_searched
         }
 
-       
-    })
+
+      })
     }
   }
 })
@@ -73,12 +73,12 @@ function searchTheory(route) {
 var routes = [
   { path: '/', component: ListTheory, props: { theories: store.state.theories } },
   { path: '/Theory/:id', name: 'Theory', component: TheoryDetail, props: searchTheory },
-  {path: '/Search', name : 'home',component: ListTheory, props: true},
+  { path: '/Search', name: 'home', component: ListTheory, props: true },
   { path: '/home', component: ListTheory, props: { theories: store.state.theories } },
-  { path: '/Profil', component: Profil, props: { userprofile: store.state.profil_user, theories: store.state.theories } },
+  { path: '/Profil', component: Profil, props: { userprofile: store.state.profil_user } },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
-  { path: '/create', name: 'create', component: Create , props: true }
+  { path: '/create', name: 'create', component: Create, props: true }
 ]
 
 
@@ -140,7 +140,7 @@ var app = new Vue({
 
     store.dispatch('getAllTheories')
 
-    
+
 
   }
 

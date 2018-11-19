@@ -49,7 +49,6 @@ const navbar = Vue.component('navbar-app', {
   },
   methods: {
     search: function (e) {
-      console.log( this.filtre )
       store.dispatch('searchTheoriesAction', this.filtre)
     }
   }
