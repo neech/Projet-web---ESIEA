@@ -51,7 +51,7 @@ const TheoryDetail = Vue.component('theory-detail', {
         },
         edit_theory: function (e) {
                 router.push({
-                    name: 'search',
+                    name: 'create',
                     params: {
                         theory: this.theory         
                     }
